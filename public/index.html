@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello Redux</title>
+    </head>
+    <body>
+        <div id="app">
+
+        </div>
+        <script src="bundle.js"></script>
+        <h1>Hello Redux App</h1>
+        <script>
+            // PURE function
+            // Given the same input, it will always return the same result
+            function chekAge(age){
+                let minimum = 18;
+                return age >= minimum; // False
+            }
+
+            // IMPURE function
+            var minimum = 15;
+            // el resultado depende de una variable que está fuera de
+            // scope de la función.
+            function chekAge(age){
+                return age >= minimum // IT DEPENDS WHAT MINIMUN VALUE IS...
+            }
+            // console.log(chekAge(16));
+        </script>
+    </body>
+</html>
