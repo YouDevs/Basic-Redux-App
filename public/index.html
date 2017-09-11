@@ -3,29 +3,16 @@
     <head>
         <meta charset="utf-8">
         <title>Hello Redux</title>
-    </head>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <body>
         <div id="app">
 
         </div>
-        <script src="bundle.js"></script>
-        <h1>Hello Redux App</h1>
-        <script>
-            // PURE function
-            // Given the same input, it will always return the same result
-            function chekAge(age){
-                let minimum = 18;
-                return age >= minimum; // False
-            }
 
-            // IMPURE function
-            var minimum = 15;
-            // el resultado depende de una variable que está fuera de
-            // scope de la función.
-            function chekAge(age){
-                return age >= minimum // IT DEPENDS WHAT MINIMUN VALUE IS...
-            }
-            // console.log(chekAge(16));
-        </script>
+        <h1>Hello Redux App</h1>
+
+        <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
+        <script src="bundle.js"></script>
     </body>
 </html>

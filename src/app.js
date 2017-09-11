@@ -26,20 +26,10 @@ render(
 );
 
 // STEP 2 create and dispatch actions
-store.dispatch(postBook(
-    [{
-        id: 1,
-        title: 'this is the title',
-        description: 'this is the description',
-        price: 33.33
-    },{
-        id: 2,
-        title: 'this is a second the title',
-        description: 'this is a second description',
-        price: 44.44
-    }]
-));
+// store.dispatch(postBook(
+//
+// ));
 
 //  -->> CART ACTIONS <<--
 // ADD to cart
-store.dispatch(addToCart([{id:1}]));
+// store.dispatch(addToCart([{id:1}]));
