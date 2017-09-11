@@ -1,4 +1,8 @@
 "use strict"
+import React from 'react';
+import {render} from 'react-dom';
+import {Provider} from 'react-redux';
+
 import {applyMiddleware, createStore} from 'redux';
 import logger from 'redux-logger';
 
@@ -12,14 +16,16 @@ import {postBook, deleteBook, updateBook} from './actions/booksActions';
 // STEP 1 create the store
 const middleware = applyMiddleware(logger)
 const store = createStore(reducers, middleware);
-// Show me the current state
-// store.subscribe(function(){
-//     console.log('current state is: ', store.getState());
-//     // console.log('current price is: ', store.getState()[1].price);
-// })
+
+
+import BooksList from './components/pages/bookslist.js';
+render(
+    <Provider store={store}>
+        <BooksList />
+    </Provider>, document.getElementById('app')
+);
 
 // STEP 2 create and dispatch actions
-// type is a keyword of redux
 store.dispatch(postBook(
     [{
         id: 1,
@@ -32,21 +38,6 @@ store.dispatch(postBook(
         description: 'this is a second description',
         price: 44.44
     }]
-));
-
-
-// DISPATCH action: DELETE a book
-store.dispatch(deleteBook(
-    {id: 1}
-));
-
-
-// DISPATCH action: UDATED a book
-store.dispatch(updateBook(
-    {
-        id: 2,
-        title:'Learn React in 24h'
-    }
 ));
 
 //  -->> CART ACTIONS <<--
