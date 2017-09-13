@@ -24,12 +24,3 @@ render(
         <BooksList />
     </Provider>, document.getElementById('app')
 );
-
-// STEP 2 create and dispatch actions
-// store.dispatch(postBook(
-//
-// ));
-
-//  -->> CART ACTIONS <<--
-// ADD to cart
-// store.dispatch(addToCart([{id:1}]));

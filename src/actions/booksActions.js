@@ -6,6 +6,14 @@ export function getBooks(book){
     }
 }
 
+// POST A BOOK
+export function postBooks(book){
+    return {
+        type:"POST_BOOK",
+        payload: book
+    }
+}
+
 // DELETE A BOOK
 export function deleteBook(id){
     return {
