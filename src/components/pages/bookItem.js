@@ -2,7 +2,7 @@ import React from 'react';
 import {Row, Col, Well, Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {addToCart} from '../../actions/cartActions';
+import {addToCart, updateCart} from '../../actions/cartActions';
 
 class BookItem extends React.Component {
 
@@ -14,9 +14,25 @@ class BookItem extends React.Component {
             price:this.props.price,
             quantity: 1
         }]
-        this.props.addToCart(book);
-    }
+        // CHECK IF CART EMPTY
+        if (this.props.cart.length > 0) {
+            let _id = this.props._id;
 
+            let cartIndex = this.props.cart.findIndex(function(cart){
+                return cart._id === _id;
+            })
+            // If return -1 there are not items with same ID
+            if (cartIndex === -1) {
+                this.props.addToCart(book);
+            } else {
+                // we nees to update quantity
+                this.props.updateCart(_id, 1)
+            }
+        } else {
+            // CART IS EMPTY
+            this.props.addToCart(book);
+        }
+    }
 
     render(){
         return (
@@ -43,7 +59,9 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
-        addToCart: addToCart
+        addToCart: addToCart,
+        updateCart: updateCart,
+        updateCart: updateCart
     }, dispatch);
 }
 
