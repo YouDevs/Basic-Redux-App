@@ -19,8 +19,15 @@ const store = createStore(reducers, middleware);
 
 
 import BooksList from './components/pages/bookslist.js';
+import Menu from './components/menu.js';
+import Footer from './components/footer.js';
+
 render(
     <Provider store={store}>
-        <BooksList />
+        <div>
+            <Menu />
+            <BooksList />
+            <Footer />
+        </div>
     </Provider>, document.getElementById('app')
 );
